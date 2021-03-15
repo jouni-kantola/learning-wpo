@@ -21,8 +21,13 @@ Goal 1: A measurable performance (before/after) optimization in https://github.c
 | - | - |
 | What is a frame? | TBA |
 
+## Checklist
+
+1. Run runtime performance audits in incognito mode, to not be affected by browser extensions 
+
 ## Log
 
 1. 2013-03-03: Find study material
 1. 2013-03-04: Goal 1 defined
-1. 2013-04-04: Defined Q&A section
+1. 2013-03-04: Defined Q&A section
+1. 2013-03-15: Defined checklist section
