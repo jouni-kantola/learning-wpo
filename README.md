@@ -19,7 +19,9 @@ Goal 1: A measurable performance (before/after) optimization in https://github.c
 
 | Question | Answer |
 | - | - |
-| What is a frame? | TBA |
+| What is a frame? | Naive explanation: Single picture, in a sequence of images |
+| What is rendering? | Drawing an image to the screen |
+| What is FPS? | Non-linear metric to show how many renders are made per second |
 
 ## Checklist
 
