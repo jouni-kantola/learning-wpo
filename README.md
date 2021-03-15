@@ -37,7 +37,8 @@ Bad, CPU fully occupied: ![image](https://user-images.githubusercontent.com/2670
 
 Better, CPU idle now and then: ![image](https://user-images.githubusercontent.com/2670127/111128451-32824c80-8575-11eb-9b9a-6924ab1f7930.png)
 
-7. In Summary tab, check what 
+7. In Summary tab, check what process occupies main thread the most.
+8. In the Main panel, find activities with "red triangles", which signals events with issues. Zoom in on those.
 
 ## Log
 
