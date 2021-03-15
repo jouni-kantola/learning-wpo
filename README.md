@@ -24,6 +24,7 @@ Goal 1: A measurable performance (before/after) optimization in https://github.c
 ## Checklist
 
 1. Run runtime performance audits in incognito mode, to not be affected by browser extensions 
+1. Simulate a slow CPU to clearly detect bottlenecks
 
 ## Log
 
