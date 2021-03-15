@@ -26,9 +26,10 @@ Goal 1: A measurable performance (before/after) optimization in https://github.c
 ## Checklist
 
 1. Run runtime performance audits in incognito mode, to not be affected by browser extensions 
-1. Simulate a slow CPU to clearly detect bottlenecks
-1. Open FPS meter and check % of frames successfully rendered
-1. Run audit and looks for red lines in the FPS chart. Compare below.
+2. Undock DevTools to all charts in the Performance tab
+3. Simulate a slow CPU to clearly detect bottlenecks
+4. Open FPS meter and check % of frames successfully rendered
+5. Run audit and looks for red lines in the FPS chart. Compare below.
 
 Bad, CPU fully occupied: ![image](https://user-images.githubusercontent.com/2670127/111128283-01a21780-8575-11eb-987c-bf2d272cdac9.png)
 
