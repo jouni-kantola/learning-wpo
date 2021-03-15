@@ -8,12 +8,14 @@ Goal 1: A measurable performance (before/after) optimization in https://github.c
 
 ## Study material
 
-* [Get Started With Analyzing Runtime Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) (added: 2013-03-03)
+1. [Get Started With Analyzing Runtime Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) (added: 2021-03-03)
+1. [Rendering Performance](https://developers.google.com/web/fundamentals/performance/rendering) (added: 2021-03-15)
 
 ## Reference material
 
 * [What forces layout / reflow](https://gist.github.com/paulirish/5d52fb081b3570c81e3a) (added: 2021-03-03)
 * [CSS Triggers](https://csstriggers.com/) (added: 2021-03-03)
+* [Performance Analysis Reference](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference) (added: 2021-03-15)
 
 ## Q & A
 
@@ -52,3 +54,4 @@ Better, CPU idle now and then: ![image](https://user-images.githubusercontent.co
 1. 2013-03-04: Defined Q&A section
 1. 2013-03-15: Defined checklist section
 1. 2013-03-15: Cleared tutorial https://www.youtube.com/watch?v=7HSkc9TLF5U and https://developers.google.com/web/tools/chrome-devtools/evaluate-performance
+1. 2013-03-15: Defined next tutorial to go through 
