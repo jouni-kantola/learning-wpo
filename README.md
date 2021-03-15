@@ -51,3 +51,4 @@ Better, CPU idle now and then: ![image](https://user-images.githubusercontent.co
 1. 2013-03-04: Goal 1 defined
 1. 2013-03-04: Defined Q&A section
 1. 2013-03-15: Defined checklist section
+1. 2013-03-15: Cleared tutorial https://www.youtube.com/watch?v=7HSkc9TLF5U and https://developers.google.com/web/tools/chrome-devtools/evaluate-performance
