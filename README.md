@@ -19,6 +19,7 @@ Goal 1: A measurable performance (before/after) optimization in https://github.c
 
 | Question | Answer |
 | - | - |
+| How should I defined performance? | Art of doing less to produce equal or better results |
 | What is a frame? | Naive explanation: Single picture, in a sequence of images |
 | What is rendering? | Drawing an image to the screen |
 | What is FPS? | Non-linear metric to show how many renders are made per second |
@@ -36,6 +37,7 @@ Bad, CPU fully occupied: ![image](https://user-images.githubusercontent.com/2670
 
 Better, CPU idle now and then: ![image](https://user-images.githubusercontent.com/2670127/111128451-32824c80-8575-11eb-9b9a-6924ab1f7930.png)
 
+7. In Summary tab, check what 
 
 ## Log
 
