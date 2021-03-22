@@ -51,7 +51,7 @@ Better, CPU idle now and then: ![image](https://user-images.githubusercontent.co
 
 10. Measure Style Recalculation Cost, by finding how many elements are affected by a style recalculation.
 
-
+![image](https://user-images.githubusercontent.com/2670127/111970705-d7fc6980-8afb-11eb-899e-4d8ab1ce995b.png)
 
 11. Compare with [What forces layout / reflow](https://gist.github.com/paulirish/5d52fb081b3570c81e3a) and [CSS Triggers](https://csstriggers.com/) to find better solution.
 
