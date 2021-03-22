@@ -25,6 +25,8 @@ Goal 1: A measurable performance (before/after) optimization in https://github.c
 | What is a frame? | Naive explanation: Single picture, in a sequence of images |
 | What is rendering? | Drawing an image to the screen |
 | What is FPS? | Non-linear metric to show how many renders are made per second |
+| What is jank? | When frame rate drops noticeably, causing content to judder on screen, because screen updates aren't done fast enough |
+| What is good FPS? | Follow device refresh rate. Normally about 16 ms (1 second / 60 frames = 16.66ms). It's really stricter because of housekeeping work the browser does, so budget is rather 10 ms |  
 
 ## Checklist
 
