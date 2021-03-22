@@ -58,6 +58,14 @@ The work required for visual changes. The less work, the cheaper the process.
 🐄 Change paint only property (e.g. background): JavaScript / CSS > Style > Paint > Composite
 🐇 Change composite only property (e.g. transform): JavaScript / CSS > Style > Composite
 
+## JavaScript optimization
+
+Find the bottlenecks before optimizing; micro-optimizations do not pay off in the end!
+
+1. 🙇 Use `requestAnimationFrame` (start of the frame) instead of `setTimeout` or `setInterval` (some point in the frame) for visual changes.
+2. 🎡 For large operations that require DOM access, batch work in separate `requestAnimationFrame` tasks. This may require status indicators to clearly signal a long running process.
+3. 👷 Move computational work to web workers to offload main thread and pfevent blocking visual updates.
+
 ## Log
 
 1. 2013-03-03: Find study material
@@ -67,3 +75,4 @@ The work required for visual changes. The less work, the cheaper the process.
 1. 2013-03-15: Cleared tutorial https://www.youtube.com/watch?v=7HSkc9TLF5U and https://developers.google.com/web/tools/chrome-devtools/evaluate-performance
 1. 2013-03-15: Defined next tutorial to go through 
 1. 2013-03-22: Defined section to describe the pixel-to-screen pipeline
+1. 2013-03-22: Added section for what to think about when optimizing JavaScript
