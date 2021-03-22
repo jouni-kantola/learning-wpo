@@ -60,13 +60,24 @@ The work required for visual changes. The less work, the cheaper the process.
 
 🐇 Change composite only property (e.g. transform): JavaScript / CSS > Style > Composite
 
+### Style
+
+Recalculating DOM element's styles are called **computed style calculation**. This is done in two steps:
+
+1. The browser figures out what selectors apply to a given element
+2. Take style rules for given element and assess what updated styles are
+
 ## JavaScript optimization
 
 Find the bottlenecks before optimizing; micro-optimizations do not pay off in the end!
 
 1. 🙇 Use `requestAnimationFrame` (start of the frame) instead of `setTimeout` or `setInterval` (some point in the frame) for visual changes.
 2. 🎡 For large operations that require DOM access, batch work in separate `requestAnimationFrame` tasks. This may require status indicators to clearly signal a long running process.
-3. 👷 Move computational work to web workers to offload main thread and pfevent blocking visual updates.
+3. 👷 Move computational work to web workers to offload main thread and prevent blocking visual updates.
+
+## CSS optimization
+
+1. Be more specific in selectors to affect as few elements as possible when style calculations are applied
 
 ## Log
 
@@ -78,3 +89,4 @@ Find the bottlenecks before optimizing; micro-optimizations do not pay off in th
 1. 2013-03-15: Defined next tutorial to go through 
 1. 2013-03-22: Defined section to describe the pixel-to-screen pipeline
 1. 2013-03-22: Added section for what to think about when optimizing JavaScript
+1. 2013-03-22: Added section for CSS optimizations
