@@ -55,7 +55,9 @@ Better, CPU idle now and then: ![image](https://user-images.githubusercontent.co
 The work required for visual changes. The less work, the cheaper the process.
 
 🐢 Change element's geometry (e.g. width): JavaScript / CSS > Style > Layout > Paint > Composite
+
 🐄 Change paint only property (e.g. background): JavaScript / CSS > Style > Paint > Composite
+
 🐇 Change composite only property (e.g. transform): JavaScript / CSS > Style > Composite
 
 ## JavaScript optimization
