@@ -27,6 +27,7 @@ Goal 1: A measurable performance (before/after) optimization in https://github.c
 | What is FPS? | Non-linear metric to show how many renders are made per second |
 | What is jank? | When frame rate drops noticeably, causing content to judder on screen, because screen updates aren't done fast enough |
 | What is good FPS? | Follow device refresh rate. Normally about 16 ms (1 second / 60 frames = 16.66ms). It's really stricter because of housekeeping work the browser does, so budget is rather 10 ms |  
+| What is pixel-to-screen pipeline? | The steps taken in the process of rendering updates to screen | 
 
 ## Checklist
 
@@ -49,6 +50,12 @@ Better, CPU idle now and then: ![image](https://user-images.githubusercontent.co
 
 10. Compare with [What forces layout / reflow](https://gist.github.com/paulirish/5d52fb081b3570c81e3a) and [CSS Triggers](https://csstriggers.com/) to find better solution.
 
+## Pixel-to-screen pipeline
+
+1. JavaScript / CSS > Style > Layout > Paint > Composite
+2. JavaScript / CSS > Style > Paint > Composite
+3. JavaScript / CSS > Style > Composite
+
 ## Log
 
 1. 2013-03-03: Find study material
@@ -57,3 +64,4 @@ Better, CPU idle now and then: ![image](https://user-images.githubusercontent.co
 1. 2013-03-15: Defined checklist section
 1. 2013-03-15: Cleared tutorial https://www.youtube.com/watch?v=7HSkc9TLF5U and https://developers.google.com/web/tools/chrome-devtools/evaluate-performance
 1. 2013-03-15: Defined next tutorial to go through 
+1. 2013-03-22: Defined section to describe the pixel-to-screen pipeline
