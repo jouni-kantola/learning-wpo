@@ -4,7 +4,9 @@ Learning material for web and rendering performance optimization.
 
 ## Goals
 
-Goal 1: A measurable performance (before/after) optimization in https://github.com/jouni-kantola/grid-snake
+Goal 1: Optimize [Test page: Janky Animation](https://github.com/GoogleChrome/devtools-samples/tree/main/jank) to cheaper animation
+
+Goal 2: A measurable performance (before/after) optimization in https://github.com/jouni-kantola/grid-snake
 
 ## Study material
 
@@ -95,3 +97,5 @@ Find the bottlenecks before optimizing; micro-optimizations do not pay off in th
 1. 2013-03-22: Defined section to describe the pixel-to-screen pipeline
 1. 2013-03-22: Added section for what to think about when optimizing JavaScript
 1. 2013-03-22: Added section for CSS optimizations
+1. 2013-03-22: Updated goals to use the Test Page Demo before moving on to unkown territory
+1. 2013-03-22: Read https://developers.google.com/web/fundamentals/performance/rendering, https://developers.google.com/web/fundamentals/performance/rendering/optimize-javascript-execution and https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations
