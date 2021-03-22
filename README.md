@@ -52,9 +52,11 @@ Better, CPU idle now and then: ![image](https://user-images.githubusercontent.co
 
 ## Pixel-to-screen pipeline
 
-1. JavaScript / CSS > Style > Layout > Paint > Composite
-2. JavaScript / CSS > Style > Paint > Composite
-3. JavaScript / CSS > Style > Composite
+The work required for visual changes. The less work, the cheaper the process.
+
+🐢 Change element's geometry (e.g. width): JavaScript / CSS > Style > Layout > Paint > Composite
+🐄 Change paint only property (e.g. background): JavaScript / CSS > Style > Paint > Composite
+🐇 Change composite only property (e.g. transform): JavaScript / CSS > Style > Composite
 
 ## Log
 
