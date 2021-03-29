@@ -13,6 +13,8 @@ Goal 2: A measurable performance (before/after) optimization in https://github.c
 1. [Get Started With Analyzing Runtime Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) (added: 2021-03-03)
 1. [Rendering Performance](https://developers.google.com/web/fundamentals/performance/rendering) (added: 2021-03-15)
 1. [Test page: Janky Animation](https://googlechrome.github.io/devtools-samples/jank/) (added: 2021-03-22)
+1. [How browser rendering works — behind the scenes](https://blog.logrocket.com/how-browser-rendering-works-behind-the-scenes-6782b0e8fb10/) (added: 2021-03-29)
+1. [Critical Rendering Path](Critical Rendering Path) (added: 2021-03-29)
 
 ## Reference material
 
@@ -122,3 +124,5 @@ Find the bottlenecks before optimizing; micro-optimizations do not pay off in th
 1. 2013-03-22: Added section for CSS optimizations
 1. 2013-03-22: Updated goals to use the Test Page Demo before moving on to unkown territory
 1. 2013-03-22: Read https://developers.google.com/web/fundamentals/performance/rendering, https://developers.google.com/web/fundamentals/performance/rendering/optimize-javascript-execution and https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations
+1. 2013-03-29: Read https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing
+1. 2013-03-29: Included further study material to understand how browser rendering works
