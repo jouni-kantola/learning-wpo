@@ -34,6 +34,7 @@ Goal 2: A measurable performance (before/after) optimization in https://github.c
 | What is good FPS? | Follow device refresh rate. Normally about 16 ms (1 second / 60 frames = 16.66ms). It's really stricter because of housekeeping work the browser does, so budget is rather 10 ms |  
 | What is pixel-to-screen pipeline? | The steps taken in the process of rendering updates to screen |
 | What is rasterization? | TBA |
+| What is a render tree? | TBA |
 
 ## Checklist
 
