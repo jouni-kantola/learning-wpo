@@ -58,6 +58,8 @@ Better, CPU idle now and then: ![image](https://user-images.githubusercontent.co
 
 11. Compare with [What forces layout / reflow](https://gist.github.com/paulirish/5d52fb081b3570c81e3a) and [CSS Triggers](https://csstriggers.com/) to find better solution.
 
+12. For animations or modifying DOM nodes, use tool `Show paint flashing rectangles` to verify only expected elements are painted.
+
 ## Pixel-to-Screen pipeline
 
 The work required for visual changes. The less work, the cheaper the process. When optimizing it's preferable to do as few steps as possible in the Pixel-to-Screen pipeline.
@@ -85,7 +87,7 @@ As changes to a specific element may affect others, the browser needs to conside
 
 ### Paint
 
-Painting, the process of "filling in the pixels", consists of two tasks:
+Painting, often the most expensive part of the pipeline, is the process of "filling in the pixels". Paint consists of two tasks:
 
 1. Create a list of draw calls
 2. Rasterization, the process of filling in/drawing visual parts of an element
