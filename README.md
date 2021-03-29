@@ -99,8 +99,9 @@ Handle order of drawing layers, so that page renders correctly.
 Find the bottlenecks before optimizing; micro-optimizations do not pay off in the end!
 
 1. 🙇 Use `requestAnimationFrame` (start of the frame) instead of `setTimeout` or `setInterval` (some point in the frame) for visual changes.
-2. 🎡 For large operations that require DOM access, batch work in separate `requestAnimationFrame` tasks. This may require status indicators to clearly signal a long running process.
-3. 👷 Move computational work to web workers to offload main thread and prevent blocking visual updates.
+2. 💁 Avoid forced synchronous layouts ("layout thrashing"). Batch style reads together, to reuse the previous frame's layout values. Once calculations are performed, then perform writes.
+3. 🎡 For large operations that require DOM access, batch work in separate `requestAnimationFrame` tasks. This may require status indicators to clearly signal a long running process.
+4. 👷 Move computational work to web workers to offload main thread and prevent blocking visual updates.
 
 ## CSS optimization
 
