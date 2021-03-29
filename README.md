@@ -104,7 +104,7 @@ Find the bottlenecks before optimizing; micro-optimizations do not pay off in th
 
 ## CSS optimization
 
-1. Be more specific in selectors to affect as few elements as possible when style calculations are applied
+1. Don't focus on CSS as a bottle neck when it comes to selectors, but prefer more specific selectors to affect as few elements as possible when style calculations are applied.
 
 ## Log
 
