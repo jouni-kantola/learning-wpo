@@ -30,7 +30,8 @@ Goal 2: A measurable performance (before/after) optimization in https://github.c
 | What is FPS? | Non-linear metric to show how many renders are made per second |
 | What is jank? | When frame rate drops noticeably, causing content to judder on screen, because screen updates aren't done fast enough |
 | What is good FPS? | Follow device refresh rate. Normally about 16 ms (1 second / 60 frames = 16.66ms). It's really stricter because of housekeeping work the browser does, so budget is rather 10 ms |  
-| What is pixel-to-screen pipeline? | The steps taken in the process of rendering updates to screen | 
+| What is pixel-to-screen pipeline? | The steps taken in the process of rendering updates to screen |
+| What is rasterization? | TBA |
 
 ## Checklist
 
@@ -57,9 +58,9 @@ Better, CPU idle now and then: ![image](https://user-images.githubusercontent.co
 
 11. Compare with [What forces layout / reflow](https://gist.github.com/paulirish/5d52fb081b3570c81e3a) and [CSS Triggers](https://csstriggers.com/) to find better solution.
 
-## Pixel-to-screen pipeline
+## Pixel-to-Screen pipeline
 
-The work required for visual changes. The less work, the cheaper the process.
+The work required for visual changes. The less work, the cheaper the process. When optimizing it's preferable to do as few steps as possible in the Pixel-to-Screen pipeline.
 
 🐢 Change element's geometry (e.g. width): JavaScript / CSS > Style > Layout > Paint > Composite
 
@@ -67,12 +68,31 @@ The work required for visual changes. The less work, the cheaper the process.
 
 🐇 Change composite only property (e.g. transform): JavaScript / CSS > Style > Composite
 
+### JavaScript / CSS trigger visual change
+
+Adding, removing or modifying DOM elements trigger visual change. Triggered by JavaScript, CSS animations or CSS transitions.
+
 ### Style
 
 Recalculating DOM element's styles are called **computed style calculation**. This is done in two steps:
 
 1. The browser figures out what selectors apply to a given element
 2. Take style rules for given element and assess what updated styles are
+
+### Layout
+
+As changes to a specific element may affect others, the browser needs to consider parent and child nodes when an element's size and position is calculated. If an element's geometry is changed, the browser needs to reflow the page.
+
+### Paint
+
+Painting, the process of "filling in the pixels", consists of two tasks:
+
+1. Create a list of draw calls
+2. Rasterization, the process of filling in/drawing visual parts of an element
+
+### Compositing
+
+Handle order of drawing layers, so that page renders correctly. 
 
 ## JavaScript optimization
 
