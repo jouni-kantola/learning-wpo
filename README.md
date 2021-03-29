@@ -14,7 +14,7 @@ Goal 2: A measurable performance (before/after) optimization in https://github.c
 1. [Rendering Performance](https://developers.google.com/web/fundamentals/performance/rendering) (added: 2021-03-15)
 1. [Test page: Janky Animation](https://googlechrome.github.io/devtools-samples/jank/) (added: 2021-03-22)
 1. [How browser rendering works — behind the scenes](https://blog.logrocket.com/how-browser-rendering-works-behind-the-scenes-6782b0e8fb10/) (added: 2021-03-29)
-1. [Critical Rendering Path](Critical Rendering Path) (added: 2021-03-29)
+1. [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path) (added: 2021-03-29)
 
 ## Reference material
 
