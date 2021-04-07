@@ -35,6 +35,8 @@ Goal 2: A measurable performance (before/after) optimization in https://github.c
 | What is pixel-to-screen pipeline? | The steps taken in the process of rendering updates to screen |
 | What is rasterization? | TBA |
 | What is a render tree? | TBA |
+| What is debouncing? | TBA |
+| How do I schedule a `requestAnimationFrame` visual change batch (debounce)? | TBA |
 
 ## Checklist
 
@@ -97,7 +99,7 @@ Painting, often the most expensive part of the pipeline, is the process of "fill
 
 ### Compositing
 
-Handle order of drawing layers, so that page renders correctly. 
+Handle order of drawing layers, so that page renders correctly. Put together painted parts for displaying on screen.
 
 ## JavaScript optimization
 
@@ -106,12 +108,14 @@ Find the bottlenecks before optimizing; micro-optimizations do not pay off in th
 1. 🙇 Use `requestAnimationFrame` (start of the frame) instead of `setTimeout` or `setInterval` (some point in the frame) for visual changes.
 2. 💁 Avoid forced synchronous layouts ("layout thrashing"). Batch style reads together, to reuse the previous frame's layout values. Once calculations are performed, then perform writes.
 3. 🎡 For large operations that require DOM access, batch work in separate `requestAnimationFrame` tasks. This may require status indicators to clearly signal a long running process.
-4. 👷 Move computational work to web workers to offload main thread and prevent blocking visual updates.
+4. 😴 Input handlers are scheduled before `requestAnimationFrame` (`rAF`). If style writes are done in input handlers and then read in `rAF` this causes layout trashing. To not block the compositor thread, batch changes together by debouncing to next `rAF` callback.
+5. 👷 Move computational work to web workers to offload main thread and prevent blocking visual updates.
 
 ## CSS optimization
 
 1. Don't focus on CSS as a bottle neck when it comes to selectors, but prefer more specific selectors to affect as few elements as possible when style calculations are applied.
-2. Layer compositioning can be utilized to improve performance, to affect fewer elements in animations. `will-change: transform` or `transform: translateZ(0)` promotes a layer. Use with care and profile to check the overhead doesn't actually decrease performance.
+2. In animations, prefer `transform` (and/or `opacity`) to avoid both _Layout_ and _Paint_.
+3. GPU acceleration via layer compositioning can be utilized to improve performance. `will-change: transform` or `transform: translateZ(0)` promotes a layer, and thereby reduces paint areas (and affects fewer elements) in animations. Use with care and profile to check the overhead doesn't actually decrease performance.
 
 ## Debug tooling
 
@@ -135,3 +139,4 @@ Find the bottlenecks before optimizing; micro-optimizations do not pay off in th
 1. 2013-03-29: Read https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing
 1. 2013-03-29: Included further study material to understand how browser rendering works
 1. 2013-04-07: Start looking for tooling in other browsers
+1. 2013-04-07: Finished _Rendering Performance_ course
