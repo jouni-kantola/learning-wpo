@@ -112,6 +112,10 @@ Find the bottlenecks before optimizing; micro-optimizations do not pay off in th
 
 1. Don't focus on CSS as a bottle neck when it comes to selectors, but prefer more specific selectors to affect as few elements as possible when style calculations are applied.
 
+## Debug tooling
+
+- Microsoft Edge has a _3D View_ to show page layers. Activate with `Shift+Ctrl+P` and toggle _Show 3D View_
+
 ## Log
 
 1. 2013-03-03: Find study material
@@ -127,3 +131,4 @@ Find the bottlenecks before optimizing; micro-optimizations do not pay off in th
 1. 2013-03-22: Read https://developers.google.com/web/fundamentals/performance/rendering, https://developers.google.com/web/fundamentals/performance/rendering/optimize-javascript-execution and https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations
 1. 2013-03-29: Read https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing
 1. 2013-03-29: Included further study material to understand how browser rendering works
+1. 2013-04-07: Start looking for tooling in other browsers
