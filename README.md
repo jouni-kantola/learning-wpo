@@ -111,6 +111,7 @@ Find the bottlenecks before optimizing; micro-optimizations do not pay off in th
 ## CSS optimization
 
 1. Don't focus on CSS as a bottle neck when it comes to selectors, but prefer more specific selectors to affect as few elements as possible when style calculations are applied.
+2. Layer compositioning can be utilized to improve performance, to affect fewer elements in animations. `will-change: transform` or `transform: translateZ(0)` promotes a layer. Use with care and profile to check the overhead doesn't actually decrease performance.
 
 ## Debug tooling
 
