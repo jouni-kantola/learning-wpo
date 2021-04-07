@@ -117,6 +117,8 @@ Find the bottlenecks before optimizing; micro-optimizations do not pay off in th
 
 - Microsoft Edge has a _3D View_ to show page layers. Activate with `Shift+Ctrl+P` and toggle _Show 3D View_
 
+![image](https://user-images.githubusercontent.com/2670127/113832577-08453880-9789-11eb-978a-93b8ac60c57e.png)
+
 ## Log
 
 1. 2013-03-03: Find study material
