@@ -57,44 +57,55 @@
       m.style.transform = `translateY(${top}px)`;
       document.body.appendChild(m);
     }
-    movers = document.querySelectorAll('.mover');
+    movers = Array.from(document.querySelectorAll('.mover'));
   };
 
+  let requiredUpdates;
   app.update = function (timestamp) {
-    for (var i = 0; i < app.count; i++) {
-      var m = movers[i];
-      if (!app.optimize) {
-        var currentPos = Number(m.style.transform.match(/\d+/)[0]);
-        var pos = m.classList.contains('down') ?
-            currentPos + distance : currentPos - distance;
-        if (pos < 0) pos = 0;
-        if (pos > maxHeight) pos = maxHeight;
-        if (pos === 0) {
-          m.classList.remove('up');
-          m.classList.add('down');
-        }
-        if (pos === maxHeight) {
-          m.classList.remove('down');
-          m.classList.add('up');
-        }
-        m.style.transform = `translateY(${pos}px)`;
-      } else {
-        var pos = parseInt(m.style.top.slice(0, m.style.top.indexOf('px')));
-        m.classList.contains('down') ? pos += distance : pos -= distance;
-        if (pos < 0) pos = 0;
-        if (pos > maxHeight) pos = maxHeight;
-        m.style.top = pos + 'px';
-        if (pos === 0) {
-          m.classList.remove('up');
-          m.classList.add('down');
-        }
-        if (pos === maxHeight) {
-          m.classList.remove('down');
-          m.classList.add('up');
-        }
+    requiredUpdates = movers.map(m => {
+      var currentPos = Number(m.style.transform.match(/\d+/)[0]);
+      var pos = m.classList.contains("down") ? currentPos + distance : currentPos - distance;
+      if (pos < 0) pos = 0;
+      if (pos > maxHeight) pos = maxHeight;
+
+      let removeUp = false;
+      let addUp = false;
+      let removeDown = false;
+      let addDown = false;
+      if (pos === 0) {
+          removeUp = true;
+          addDown = true;
       }
+      if (pos === maxHeight) {
+        removeDown = true;
+        addUp = true;
+      }
+
+      return {
+          el: m,
+          transform: `translateY(${pos}px)`,
+          addDown,
+          removeDown,
+          addUp,
+          removeUp
+      };
+    });
+
+    frame = window.requestAnimationFrame(updatePositions);
+  }
+
+  function updatePositions() {
+    if(requiredUpdates) {
+      requiredUpdates.forEach(({ el, addDown, removeDown, addUp, removeUp, transform }) => {
+        if (addDown) el.classList.add("down");
+        if (removeDown) el.classList.remove("down");
+        if (addUp) el.classList.add("up");
+        if (removeUp) el.classList.remove("up");
+        el.style.transform = transform;
+      })
     }
-    frame = window.requestAnimationFrame(app.update);
+
+    window.requestAnimationFrame(app.update);
   }
 
   document.querySelector('.stop').addEventListener('click', function (e) {
