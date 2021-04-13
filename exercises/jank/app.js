@@ -67,7 +67,6 @@
             m.offsetTop + distance : m.offsetTop - distance;
         if (pos < 0) pos = 0;
         if (pos > maxHeight) pos = maxHeight;
-        m.style.top = pos + 'px';
         if (m.offsetTop === 0) {
           m.classList.remove('up');
           m.classList.add('down');
@@ -76,6 +75,9 @@
           m.classList.remove('down');
           m.classList.add('up');
         }
+        window.requestAnimationFrame(() => {
+          m.style.top = pos + "px";
+        });
       } else {
         var pos = parseInt(m.style.top.slice(0, m.style.top.indexOf('px')));
         m.classList.contains('down') ? pos += distance : pos -= distance;
