@@ -53,7 +53,8 @@
         m.classList.add('down');
       }
       m.style.left = (i / (app.count / maxWidth)) + 'vw';
-      m.style.top = top + 'px';
+      m.style.willChange = "transform";
+      m.style.transform = `translateY(${top}px)`;
       document.body.appendChild(m);
     }
     movers = document.querySelectorAll('.mover');
@@ -63,7 +64,7 @@
     for (var i = 0; i < app.count; i++) {
       var m = movers[i];
       if (!app.optimize) {
-        var currentPos = Number(m.style.top.split("px")[0]);
+        var currentPos = Number(m.style.transform.match(/\d+/)[0]);
         var pos = m.classList.contains('down') ?
             currentPos + distance : currentPos - distance;
         if (pos < 0) pos = 0;
@@ -76,7 +77,7 @@
           m.classList.remove('down');
           m.classList.add('up');
         }
-        m.style.top = pos + "px";
+        m.style.transform = `translateY(${pos}px)`;
       } else {
         var pos = parseInt(m.style.top.slice(0, m.style.top.indexOf('px')));
         m.classList.contains('down') ? pos += distance : pos -= distance;
