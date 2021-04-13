@@ -63,8 +63,9 @@
     for (var i = 0; i < app.count; i++) {
       var m = movers[i];
       if (!app.optimize) {
+        var currentPos = Number(m.style.top.split("px")[0]);
         var pos = m.classList.contains('down') ?
-            m.offsetTop + distance : m.offsetTop - distance;
+            currentPos + distance : currentPos - distance;
         if (pos < 0) pos = 0;
         if (pos > maxHeight) pos = maxHeight;
         if (pos === 0) {
