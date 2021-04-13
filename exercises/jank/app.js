@@ -67,17 +67,15 @@
             m.offsetTop + distance : m.offsetTop - distance;
         if (pos < 0) pos = 0;
         if (pos > maxHeight) pos = maxHeight;
-        if (m.offsetTop === 0) {
+        if (pos === 0) {
           m.classList.remove('up');
           m.classList.add('down');
         }
-        if (m.offsetTop === maxHeight) {
+        if (pos === maxHeight) {
           m.classList.remove('down');
           m.classList.add('up');
         }
-        window.requestAnimationFrame(() => {
-          m.style.top = pos + "px";
-        });
+        m.style.top = pos + "px";
       } else {
         var pos = parseInt(m.style.top.slice(0, m.style.top.indexOf('px')));
         m.classList.contains('down') ? pos += distance : pos -= distance;
