@@ -4,7 +4,7 @@ Learning material for web and rendering performance optimization.
 
 ## Goals
 
-Goal 1: Optimize [Test page: Janky Animation](https://github.com/GoogleChrome/devtools-samples/tree/main/jank) to cheaper animation
+Goal 1: Optimize [Test page: Janky Animation](exercises/jank/index.html) to cheaper animation
 
 Goal 2: A measurable performance (before/after) optimization in https://github.com/jouni-kantola/grid-snake
 
@@ -31,7 +31,7 @@ Goal 2: A measurable performance (before/after) optimization in https://github.c
 | What is rendering? | Drawing an image to the screen |
 | What is FPS? | Non-linear metric to show how many renders are made per second |
 | What is jank? | When frame rate drops noticeably, causing content to judder on screen, because screen updates aren't done fast enough |
-| What is good FPS? | Follow device refresh rate. Normally about 16 ms (1 second / 60 frames = 16.66ms). It's really stricter because of housekeeping work the browser does, so budget is rather 10 ms |  
+| What is good FPS? | Follow device refresh rate. Normally about 16 ms (1 second / 60 frames = 16.66ms). It's really stricter because of housekeeping work the browser does, so budget is rather 10 ms |
 | What is pixel-to-screen pipeline? | The steps taken in the process of rendering updates to screen |
 | What is rasterization? | TBA |
 | What is a render tree? | TBA |
@@ -40,7 +40,7 @@ Goal 2: A measurable performance (before/after) optimization in https://github.c
 
 ## Checklist
 
-1. Run runtime performance audits in incognito mode, to not be affected by browser extensions 
+1. Run runtime performance audits in incognito mode, to not be affected by browser extensions
 2. Undock DevTools to all charts in the Performance tab
 3. Simulate a slow CPU to clearly detect bottlenecks
 4. Open FPS meter and check % of frames successfully rendered
@@ -130,7 +130,7 @@ Find the bottlenecks before optimizing; micro-optimizations do not pay off in th
 1. 2013-03-04: Defined Q&A section
 1. 2013-03-15: Defined checklist section
 1. 2013-03-15: Cleared tutorial https://www.youtube.com/watch?v=7HSkc9TLF5U and https://developers.google.com/web/tools/chrome-devtools/evaluate-performance
-1. 2013-03-15: Defined next tutorial to go through 
+1. 2013-03-15: Defined next tutorial to go through
 1. 2013-03-22: Defined section to describe the pixel-to-screen pipeline
 1. 2013-03-22: Added section for what to think about when optimizing JavaScript
 1. 2013-03-22: Added section for CSS optimizations
@@ -140,3 +140,4 @@ Find the bottlenecks before optimizing; micro-optimizations do not pay off in th
 1. 2013-03-29: Included further study material to understand how browser rendering works
 1. 2013-04-07: Start looking for tooling in other browsers
 1. 2013-04-07: Finished _Rendering Performance_ course
+1. 2013-04-13: Forked exercise [devtools-samples/jank](https://github.com/GoogleChrome/devtools-samples/tree/main/jank)
