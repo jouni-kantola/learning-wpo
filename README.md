@@ -107,7 +107,7 @@ Find the bottlenecks before optimizing; micro-optimizations do not pay off in th
 
 1. 🙇 Use `requestAnimationFrame` (start of the frame) instead of `setTimeout` or `setInterval` (some point in the frame) for visual changes.
 2. 💁 Avoid forced synchronous layouts ("layout thrashing"). Batch style reads together, to reuse the previous frame's layout values. Once calculations are performed, then perform writes.
-3. 🎡 For large operations that require DOM access, batch work in separate `requestAnimationFrame` tasks. This may require status indicators to clearly signal a long running process.
+3. 🎡 For large operations that require DOM access, batch work in separate `requestAnimationFrame` tasks. This may require status indicators to clearly signal a long running process. Worth noting, poor implementation of tasks results in "laggy" visuals (without clearly showing in performance debugger).
 4. 😴 Input handlers are scheduled before `requestAnimationFrame` (`rAF`). If style writes are done in input handlers and then read in `rAF` this causes layout trashing. To not block the compositor thread, batch changes together by debouncing to next `rAF` callback.
 5. 👷 Move computational work to web workers to offload main thread and prevent blocking visual updates.
 
@@ -125,19 +125,20 @@ Find the bottlenecks before optimizing; micro-optimizations do not pay off in th
 
 ## Log
 
-1. 2013-03-03: Find study material
-1. 2013-03-04: Goal 1 defined
-1. 2013-03-04: Defined Q&A section
-1. 2013-03-15: Defined checklist section
-1. 2013-03-15: Cleared tutorial https://www.youtube.com/watch?v=7HSkc9TLF5U and https://developers.google.com/web/tools/chrome-devtools/evaluate-performance
-1. 2013-03-15: Defined next tutorial to go through
-1. 2013-03-22: Defined section to describe the pixel-to-screen pipeline
-1. 2013-03-22: Added section for what to think about when optimizing JavaScript
-1. 2013-03-22: Added section for CSS optimizations
-1. 2013-03-22: Updated goals to use the Test Page Demo before moving on to unkown territory
-1. 2013-03-22: Read https://developers.google.com/web/fundamentals/performance/rendering, https://developers.google.com/web/fundamentals/performance/rendering/optimize-javascript-execution and https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations
-1. 2013-03-29: Read https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing
-1. 2013-03-29: Included further study material to understand how browser rendering works
-1. 2013-04-07: Start looking for tooling in other browsers
-1. 2013-04-07: Finished _Rendering Performance_ course
-1. 2013-04-13: Forked exercise [devtools-samples/jank](https://github.com/GoogleChrome/devtools-samples/tree/main/jank)
+1. 2021-03-03: Find study material
+1. 2021-03-04: Goal 1 defined
+1. 2021-03-04: Defined Q&A section
+1. 2021-03-15: Defined checklist section
+1. 2021-03-15: Cleared tutorial https://www.youtube.com/watch?v=7HSkc9TLF5U and https://developers.google.com/web/tools/chrome-devtools/evaluate-performance
+1. 2021-03-15: Defined next tutorial to go through
+1. 2021-03-22: Defined section to describe the pixel-to-screen pipeline
+1. 2021-03-22: Added section for what to think about when optimizing JavaScript
+1. 2021-03-22: Added section for CSS optimizations
+1. 2021-03-22: Updated goals to use the Test Page Demo before moving on to unkown territory
+1. 2021-03-22: Read https://developers.google.com/web/fundamentals/performance/rendering, https://developers.google.com/web/fundamentals/performance/rendering/optimize-javascript-execution and https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations
+1. 2021-03-29: Read https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing
+1. 2021-03-29: Included further study material to understand how browser rendering works
+1. 2021-04-07: Start looking for tooling in other browsers
+1. 2021-04-07: Finished _Rendering Performance_ course
+1. 2021-04-13: Forked exercise [devtools-samples/jank](https://github.com/GoogleChrome/devtools-samples/tree/main/jank)
+1. 2021-04-13: Put reading to practice (check branches)
