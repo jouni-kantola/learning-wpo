@@ -22,7 +22,7 @@
       ballSize = proto.getBoundingClientRect(),
       maxHeight = Math.floor(bodySize.height - ballSize.height),
       maxWidth = 97, // 100vw - width of square (3vw)
-      incrementor = 10,
+      incrementor = 1000,
       distance = 3,
       frame,
       minimum = 10,
@@ -97,11 +97,14 @@
   function updatePositions() {
     if(requiredUpdates) {
       requiredUpdates.forEach(({ el, addDown, removeDown, addUp, removeUp, transform }) => {
-        if (addDown) el.classList.add("down");
-        if (removeDown) el.classList.remove("down");
-        if (addUp) el.classList.add("up");
-        if (removeUp) el.classList.remove("up");
-        el.style.transform = transform;
+        window.requestAnimationFrame(() => {
+          if (addDown) el.classList.add("down");
+          if (removeDown) el.classList.remove("down");
+          if (addUp) el.classList.add("up");
+          if (removeUp) el.classList.remove("up");
+          el.style.transform = transform;
+        })
+
       })
     }
 
