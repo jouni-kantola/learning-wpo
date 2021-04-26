@@ -141,4 +141,6 @@ Find the bottlenecks before optimizing; micro-optimizations do not pay off in th
 1. 2021-04-07: Start looking for tooling in other browsers
 1. 2021-04-07: Finished _Rendering Performance_ course
 1. 2021-04-13: Forked exercise [devtools-samples/jank](https://github.com/GoogleChrome/devtools-samples/tree/main/jank)
-1. 2021-04-13: Put reading to practice (check branches)
+1. 2021-04-13: Put [reading to practice](https://github.com/jouni-kantola/wpo/commit/b63c9f7cb7154c2bb62fa0b0e6b5147a7f98f5ed)
+1. 2021-04-19: Start looking for bottlenecks in [Grid Snake](https://github.com/jouni-kantola/grid-snake)
+
