@@ -107,9 +107,10 @@ Find the bottlenecks before optimizing; micro-optimizations do not pay off in th
 
 1. 🙇 Use `requestAnimationFrame` (start of the frame) instead of `setTimeout` or `setInterval` (some point in the frame) for visual changes.
 2. 💁 Avoid forced synchronous layouts ("layout thrashing"). Batch style reads together, to reuse the previous frame's layout values. Once calculations are performed, then perform writes.
-3. 🎡 For large operations that require DOM access, batch work in separate `requestAnimationFrame` tasks. This may require status indicators to clearly signal a long running process. Worth noting, poor implementation of tasks results in "laggy" visuals (without clearly showing in performance debugger).
-4. 😴 Input handlers are scheduled before `requestAnimationFrame` (`rAF`). If style writes are done in input handlers and then read in `rAF` this causes layout trashing. To not block the compositor thread, batch changes together by debouncing to next `rAF` callback.
-5. 👷 Move computational work to web workers to offload main thread and prevent blocking visual updates.
+3. 🧐 Watch out for recurring long running tasks, especially if they together take longer than 16 ms.
+4. 🎡 For large operations that require DOM access, batch work in separate `requestAnimationFrame` tasks. This may require status indicators to clearly signal a long running process. Worth noting, poor implementation of tasks results in "laggy" visuals (without clearly showing in performance debugger).
+5. 😴 Input handlers are scheduled before `requestAnimationFrame` (`rAF`). If style writes are done in input handlers and then read in `rAF` this causes layout trashing. To not block the compositor thread, batch changes together by debouncing to next `rAF` callback.
+6. 👷 Move computational work to web workers to offload main thread and prevent blocking visual updates.
 
 ## CSS optimization
 
@@ -143,4 +144,4 @@ Find the bottlenecks before optimizing; micro-optimizations do not pay off in th
 1. 2021-04-13: Forked exercise [devtools-samples/jank](https://github.com/GoogleChrome/devtools-samples/tree/main/jank)
 1. 2021-04-13: Put [reading to practice](https://github.com/jouni-kantola/wpo/commit/b63c9f7cb7154c2bb62fa0b0e6b5147a7f98f5ed)
 1. 2021-04-19: Start looking for bottlenecks in [Grid Snake](https://github.com/jouni-kantola/grid-snake)
-
+1. 2021-04-19: Optimized recurring long running tasks
