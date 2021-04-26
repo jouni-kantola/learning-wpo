@@ -14,6 +14,7 @@ Goal 2: A measurable performance (before/after) optimization in https://github.c
 1. [Rendering Performance](https://developers.google.com/web/fundamentals/performance/rendering) (added: 2021-03-15)
 1. [Test page: Janky Animation](https://googlechrome.github.io/devtools-samples/jank/) (added: 2021-03-22)
 1. [How browser rendering works — behind the scenes](https://blog.logrocket.com/how-browser-rendering-works-behind-the-scenes-6782b0e8fb10/) (added: 2021-03-29)
+1. [The Anatomy of a Frame](https://aerotwist.com/blog/the-anatomy-of-a-frame/)
 1. [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path) (added: 2021-03-29)
 
 ## Reference material
@@ -65,7 +66,7 @@ Better, CPU idle now and then: ![image](https://user-images.githubusercontent.co
 
 12. For animations or modifying DOM nodes, use tool `Show paint flashing rectangles` to verify only expected elements are painted.
 
-13. Long running tasks, where the UI thread is busy for >50 ms, can be observed with the [Long Task API](https://developer.mozilla.org/en-US/docs/Web/API/Long_Tasks_API)
+13. Long running tasks, where the UI thread is busy for >50 ms, can be observed with the [Long Task API](https://github.com/w3c/longtasks#long-task-api)
 
 ```js
 const observer = new PerformanceObserver(list => {
