@@ -65,6 +65,17 @@ Better, CPU idle now and then: ![image](https://user-images.githubusercontent.co
 
 12. For animations or modifying DOM nodes, use tool `Show paint flashing rectangles` to verify only expected elements are painted.
 
+13. Long running tasks, where the UI thread is busy for >50 ms, can be observed with the [Long Task API](https://developer.mozilla.org/en-US/docs/Web/API/Long_Tasks_API)
+
+```js
+const observer = new PerformanceObserver(list => {
+    const entries = list.getEntries();
+    console.warn("Long Task", entries);
+});
+
+observer.observe({ entryTypes: ["longtask"] });
+```
+
 ## Pixel-to-Screen pipeline
 
 The work required for visual changes. The less work, the cheaper the process. When optimizing it's preferable to do as few steps as possible in the Pixel-to-Screen pipeline.
@@ -143,4 +154,5 @@ Find the bottlenecks before optimizing; micro-optimizations do not pay off in th
 1. 2021-04-13: Forked exercise [devtools-samples/jank](https://github.com/GoogleChrome/devtools-samples/tree/main/jank)
 1. 2021-04-13: Put [reading to practice](https://github.com/jouni-kantola/wpo/commit/b63c9f7cb7154c2bb62fa0b0e6b5147a7f98f5ed)
 1. 2021-04-19: Start looking for bottlenecks in [Grid Snake](https://github.com/jouni-kantola/grid-snake)
+1. 2021-04-26: Programmatically observe long running tasks
 
